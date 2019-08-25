@@ -1,0 +1,64 @@
+stackbitVersion: ~0.2.0
+ssgName: hugo
+publishDir: public
+buildCommand: hugo
+uploadDir: images
+staticDir: static
+pagesDir: content
+dataDir: data
+excludePages: 
+  - example/**/*
+  - README.md
+metadata: 
+  title: Vivek stackbit
+  description: Description of the site
+  author: Stackbit
+  authorURL: 'https://www.stackbit.com'
+  images:
+    small: 
+    large:
+models: 
+  config: 
+    type: config
+    label: Config
+    fields: 
+      - type: image
+        name: logo
+        label: Logo
+        description: the path of the logo image
+  generic_page:
+    # generic_page model matches all md files in "content" folder, except
+    # "index.md" and files located inside "products" and "posts" folders
+    type: page
+    label: Generic Page Model
+    template: default
+    exclude: 
+      - index.md
+      - posts/**/*
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: date
+        name: date
+        label: Date
+  post:
+    type: page
+    label: Posts
+    folder: posts
+    template: posts
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: date
+        name: date
+        label: Date
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: boolean
+        name: draft
+        label: Draft
