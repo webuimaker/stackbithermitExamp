@@ -8,7 +8,6 @@ tags = [
     "development",
 ]
 date = "2014-04-02"
-toc = true
 +++
 
 ## Move static content to `static`

@@ -7,7 +7,6 @@ tags = [
     "development",
 ]
 date = "2014-04-02"
-toc = true
 +++
 
 ## Step 1. Install Hugo
